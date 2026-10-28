@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer, useState, ReactNode } from "react";
 
-// ----- Tipos -----
+           // ----- tipos -----
 interface ITarea {
   id: number;
   texto: string;
@@ -10,11 +10,11 @@ type TareaAction =
   | { type: "agregar"; payload: string }
   | { type: "borrar"; payload: number };
 
-// ----- Actividad 4: reducer con las acciones agregar y borrar -----
+//  Actividad 4: reducer con las acciones agregar y borrar 
 const tareasReducer = (state: ITarea[], action: TareaAction): ITarea[] => {
   switch (action.type) {
     case "agregar":
-      // Se devuelve un arreglo NUEVO, no se modifica el anterior
+      // Se devuelve un arreglo nuevo, no se modifica el anterior
       return [...state, { id: Date.now(), texto: action.payload }];
     case "borrar":
       return state.filter((tarea) => tarea.id !== action.payload);
@@ -23,7 +23,7 @@ const tareasReducer = (state: ITarea[], action: TareaAction): ITarea[] => {
   }
 };
 
-// ----- Actividad 6: contexto y provider para compartir el estado -----
+// Actividad 6: contexto y provider para compartir el estado --
 interface ITareasContext {
   tareas: ITarea[];
   dispatch: React.Dispatch<TareaAction>;
@@ -48,7 +48,7 @@ const useTareas = () => {
   return context;
 };
 
-// ----- Actividad 5: los componentes solo hacen dispatch -----
+// Actividad 5: los componentes solo hacen dispatch 
 const FormularioTarea = () => {
   const { dispatch } = useTareas();
   const [texto, setTexto] = useState("");
@@ -91,7 +91,7 @@ const ListaTareas = () => {
   );
 };
 
-// ----- Página de la práctica -----
+// Página de la práctica
 const Clase6Practica = () => {
   return (
     <article>

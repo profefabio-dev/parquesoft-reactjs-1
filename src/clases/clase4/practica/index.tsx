@@ -19,7 +19,7 @@ const Clase4Practica = () => {
 
   // Actividad 1: pedir los usuarios dentro de un useEffect
   useEffect(() => {
-    // Actividad 3: controlador para cancelar la petición
+    // Actividad 3: controlador para cancelar la petici
     const controlador = new AbortController();
 
     const fetchUsers = async () => {
@@ -52,7 +52,7 @@ const Clase4Practica = () => {
     };
   }, []);
 
-  // Actividad 2: tres estados -> cargando, error y lista
+     // Actividad 2:   tres estados -> cargando, error y lista
   if (loading) return <p>Cargando usuarios...</p>;
   if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
 
